@@ -2,30 +2,76 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Rule of 72 Calulator</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="app.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Rule of 72 Calulator</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
 </head>
 
 <body>
-    <div class="form">
 
-        <h1>Rule of 72 Calculator</h1>
 
-        <form id="resetform">
-            <label for="">Calulate: </label>
-            <select name="" id="">
-                <option value="Interest Rate">Interest Rate</option>
-                <option value="Number of Years">Number of Years</option>
-            </select><br>
+  <div class="Begin goodCalculator">
+    <form id="rulecalc" class="contact">
+      <fieldset>
+        <legend>Rule of 72 Calculator</legend>
+        <p>
+          <label for="rule">Calculate:</label>
+          <select name="rule" id="rule" onchange="Selected(this)">
+            <option value="1" selected="selected">Interest Rate</option>
+            <option value="2">Number of Years</option>
+          </select>
+          <input type="hidden" id="param" value="1">
+        </p>
+        <p id="Block1" style="display: none;">
+          <label for="AnnInterestRate">Interest Rate (%):</label>
+          <input id="AnnInterestRate" class="calc numeric" type="number" step="any" min="0.5" value="6.0"
+            onchange="CalcRule();">
+          %
+        </p>
+        <p id="Block2" style="display: block;">
+          <label for="Years">Number of Years:</label>
+          <input name="Years" id="Years" class="calc numeric" type="number" step="any" min="0.5" value=""
+            onchange="CalcRule1();">
+          years
+        </p>
+        <p>
+          <input type="button" class="submit" value="Calculate">
+        </p>
+      </fieldset>
+    </form>
+  </div>
 
-            <label for="">Number of Years: </label>
-            <input type="text" id="years" size="10"><br>
-        </form>
-    </div>
+
+
+
+  <!-- <div class="form">
+    <h1>Rule of 72 Calculator</h1>
+
+    <form id="resetform">
+      <label for="Calulate">Calulate: </label>
+      <select name="" id="">
+        <option value="Interest Rate">Interest Rate</option>
+        <option value="Number of Years">Number of Years</option>
+      </select><br />
+
+      <label for="">Number of Years: </label>
+      <input type="text" id="years" size="10" /><br />
+    </form>
+
+    <button type="button" onclick="doFV()">Calulate</button><br />
+  </div> -->
+
+  <!-- <p>Interest Rate: <input id="interest_rate" type="number" min="0" max="100" value="10" step=".1"
+      onchange="computeRule() ">%</p>
+  <p>Years: <input id="years" type="number" min="1" max="72" value="1" step="1" onchange="computeRule() "></p> -->
 </body>
+<script src="app.js"></script>
 
 </html>

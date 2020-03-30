@@ -1,0 +1,10 @@
+.Begin {
+    padding-bottom: 0px;
+}
+
+.Begin fieldset {
+    background: #fff;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    padding: 15px 5px;
+}
